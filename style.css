@@ -1,0 +1,190 @@
+/* --- Variáveis de Cores e Fontes --- */
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #141414;
+    --text-color: #ffffff;
+    --accent-color: #8A2BE2; /* Roxo */
+    --accent-hover: #9b4de6;
+    --gray-text: #b3b3b3;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Reset Básico --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Tipografia e Links --- */
+h1, h2, h3 { color: var(--text-color); margin-bottom: 1rem; }
+a { text-decoration: none; color: var(--text-color); transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- Header / Navbar --- */
+header {
+    background-color: rgba(10, 10, 10, 0.95);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a:hover { color: var(--accent-color); }
+
+/* --- Layout Geral --- */
+.container {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+}
+
+/* --- Botões --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.btn:hover { background-color: var(--accent-hover); }
+
+/* --- Cards (Grid Padrão para Home/Sobre) --- */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border: 1px solid #333;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+
+/* --- NOVO: Estilo para Cartões de Pacotes Verticais e Horizontais (Página Pacotes) --- */
+.package-card-horizontal {
+    background-color: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin-bottom: 3.5rem; /* Maior espaçamento vertical */
+    padding: 0;
+    display: flex; /* Flexbox para layout (Info Esquerda / Imagem Direita) */
+    
+    /* Efeito de sombra roxa solicitado */
+    box-shadow: 0 0 25px 5px rgba(138, 43, 226, 0.45); 
+    overflow: hidden; /* Garante que a imagem siga o border-radius */
+}
+
+.card-content-left {
+    flex: 1; /* Ocupa o espaço restante */
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-image-right {
+    flex: 0 0 45%; /* Imagem ocupa 45% da largura do card */
+}
+
+.card-image-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+/* Responsividade para Cartões Horizontais */
+@media (max-width: 850px) {
+    .package-card-horizontal {
+        flex-direction: column; 
+    }
+    .card-image-right {
+        flex: 0 0 100%;
+        height: 250px; /* Altura fixa para a imagem no mobile */
+        order: -1; /* Coloca a imagem no topo no mobile */
+    }
+}
+
+/* --- Carrossel (Destinos) --- */
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--card-bg);
+    border: 1px solid #333;
+}
+.carousel-slide { display: none; padding: 2rem; animation: fadeEffect 1s; }
+.carousel-slide.active { display: block; }
+.slide-img {
+    width: 100%; height: 300px; object-fit: cover;
+    border-radius: 5px; margin-bottom: 1rem; background-color: #333;
+}
+.prev, .next {
+    cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px;
+    color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease;
+    background-color: rgba(0,0,0,0.5); user-select: none;
+}
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev { left: 0; border-radius: 0 3px 3px 0; }
+@keyframes fadeEffect { from {opacity: .4} to {opacity: 1} }
+
+/* --- Tabelas (Destinos) --- */
+table { width: 100%; border-collapse: collapse; margin-top: 1rem; background-color: #1a1a1a; }
+th, td { border: 1px solid #444; padding: 12px; text-align: left; }
+th { background-color: var(--accent-color); }
+
+/* --- Listas (Benefícios e Roteiros) --- */
+.styled-list ul {
+    list-style-type: '— '; /* Estilo visual diferente para os benefícios */
+    margin-left: 20px;
+    color: #ddd;
+}
+.styled-list ol {
+    margin-left: 20px;
+}
+.styled-list li { margin-bottom: 8px; }
+
+
+/* --- Formulário (Contato) --- */
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; color: var(--gray-text); }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 10px; background-color: #222; border: 1px solid #444; color: white; border-radius: 4px;
+}
+.form-group input:focus { border-color: var(--accent-color); outline: none; }
+
+/* --- Footer --- */
+footer { background-color: #000; text-align: center; padding: 2rem; margin-top: 4rem; border-top: 1px solid #333; }

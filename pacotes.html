@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>VoyageX | Pacotes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">VoyageX</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="destinos.html">Destinos</a>
+            <a href="pacotes.html" style="color: var(--accent-color);">Pacotes</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <center><h2 class="section-title">Nossos Pacotes Exclusivos</h2></center>
+        
+        <div class="package-card-horizontal">
+            <div class="card-content-left">
+                <div>
+                    <h3 style="color: var(--accent-color); font-size: 2rem;">VoyageX Solo: Descoberta Global</h3>
+                    <p style="color: var(--gray-text); font-size: 1.1rem; margin-top: 10px;">
+                        Para o explorador independente que prioriza segurança, imersão cultural e a liberdade de seguir seu próprio ritmo.
+                    </p>
+                    <div class="styled-list" style="margin-top: 2rem;">
+                        <h4>Incluso no Pacote Base:</h4>
+                        <ul>
+                            <li>Passagem Aérea Econômica (Flexível para reagendamento)</li>
+                            <li>Hospedagem em Hotéis Boutique ou Hostels de luxo (Quarto Privativo)</li>
+                            <li>Seguro Viagem Completo (Acidentes e Saúde)</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn" onclick="toggleDetails('detalhes1')" style="margin-top: 25px;">Ver 8 Benefícios Adicionais</button>
+                <div id="detalhes1" style="display:none; margin-top:15px; font-size:0.9rem; color: #ccc;">
+                    <p style="font-weight: bold; margin-bottom: 5px;">Bônus VoyageX Solo:</p>
+                    <div class="styled-list">
+                        <ul>
+                            <li>Chip de Internet 10GB Global.</li>
+                            <li>Acesso à comunidade exclusiva de viajantes VoyageX (Networking).</li>
+                            <li>1 Tour Guiado (City Tour ou Gastronômico) cortesia.</li>
+                            <li>Consultoria de segurança 24/7 via WhatsApp.</li>
+                            <li>Guia Digital interativo com mapas offline.</li>
+                            <li>Desconto de 15% em tours opcionais.</li>
+                            <li>Transfer Aeroporto (Chegada e Partida).</li>
+                            <li>Cartão pré-pago internacional com taxa zero.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-image-right">
+                <img src="https://www.hostelworld.com/blog/wp-content/uploads/solo-travel-30s.jpg" alt="Viajante Solo explorando uma cidade" loading="lazy">
+            </div>
+        </div>
+
+        <div class="package-card-horizontal">
+            <div class="card-content-left">
+                <div>
+                    <h3 style="color: var(--accent-color); font-size: 2rem;">VoyageX Couple: Romance Premium</h3>
+                    <p style="color: var(--gray-text); font-size: 1.1rem; margin-top: 10px;">
+                        Experiências exclusivas e inesquecíveis, planejadas para celebrar o amor e o conforto.
+                    </p>
+                    <div class="styled-list" style="margin-top: 2rem;">
+                        <h4>Incluso no Pacote Base:</h4>
+                        <ul>
+                            <li>Passagens Aéreas Executivas (Upgrades disponíveis)</li>
+                            <li>Hospedagem em Hotéis 5 Estrelas (Quartos Superiores)</li>
+                            <li>Reservas em 2 Jantares Românticos em restaurantes de alta gastronomia.</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn" onclick="toggleDetails('detalhes2')" style="margin-top: 25px;">Ver 6 Benefícios Adicionais</button>
+                <div id="detalhes2" style="display:none; margin-top:15px; font-size:0.9rem; color: #ccc;">
+                    <p style="font-weight: bold; margin-bottom: 5px;">Bônus VoyageX Couple:</p>
+                    <div class="styled-list">
+                        <ul>
+                            <li>Massagem Relaxante para o Casal (Spa Day).</li>
+                            <li>Garrafa de Champanhe e Chocolates na chegada.</li>
+                            <li>Café da manhã no quarto (uma vez).</li>
+                            <li>Late Check-out garantido sem custo.</li>
+                            <li>Passeio de barco ou carro privado (3 horas).</li>
+                            <li>Serviço de concierge 24h dedicado ao casal.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-image-right">
+                <img src="https://media.istockphoto.com/id/1388251524/pt/foto/silhouette-of-happy-asian-couple-hands-holding-and-walking-together-on-the-beach-while-golden.jpg?s=612x612&w=0&k=20&c=UAmZUo-dBoSy9ZKvJ382BJPIdvSOzODskW-z5WF1TJg=" alt="Casal na praia paradisíaca" loading="lazy">
+            </div>
+        </div>
+
+        <div class="package-card-horizontal">
+            <div class="card-content-left">
+                <div>
+                    <h3 style="color: var(--accent-color); font-size: 2rem;">VoyageX Family: Memórias em Família</h3>
+                    <p style="color: var(--gray-text); font-size: 1.1rem; margin-top: 10px;">
+                        Viagens planejadas para garantir diversão para as crianças e o máximo de tranquilidade para os pais.
+                    </p>
+                    <div class="styled-list" style="margin-top: 2rem;">
+                        <h4>Incluso no Pacote Base:</h4>
+                        <ul>
+                            <li>Passagens Aéreas com assentos contíguos (Espaço Família)</li>
+                            <li>Resorts com Clubes Infantis e Monitores qualificados.</li>
+                            <li>Ingressos para Parques Temáticos (Pacote Completo).</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn" onclick="toggleDetails('detalhes3')" style="margin-top: 25px;">Ver 7 Benefícios Adicionais</button>
+                <div id="detalhes3" style="display:none; margin-top:15px; font-size:0.9rem; color: #ccc;">
+                    <p style="font-weight: bold; margin-bottom: 5px;">Bônus VoyageX Family:</p>
+                    <div class="styled-list">
+                        <ul>
+                            <li>Transporte terrestre em Van Executiva (Maior conforto e segurança).</li>
+                            <li>Crianças até 5 anos não pagam hospedagem.</li>
+                            <li>Kit de boas-vindas personalizado para cada criança.</li>
+                            <li>Consulta pediátrica online gratuita (Emergências).</li>
+                            <li>Carrinhos e cadeirinhas de carro disponíveis para aluguel.</li>
+                            <li>Prioridade em filas de check-in e embarque.</li>
+                            <li>Opções de menu kids incluídas em hotéis.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-image-right">
+                <img src="https://static.vecteezy.com/ti/fotos-gratis/p2/17724962-familia-feliz-com-viagem-de-carro-ferias-de-verao-no-carro-ao-por-do-sol-pai-mae-e-filha-viajando-felizes-desfrutam-juntos-dirigindo-em-feriados-estilo-de-vida-das-pessoas-andam-de-automovel-foto.jpg" alt="Família feliz em viagem" loading="lazy">
+            </div>
+        </div>
+
+        <div class="package-card-horizontal">
+            <div class="card-content-left">
+                <div>
+                    <h3 style="color: var(--accent-color); font-size: 2rem;">VoyageX Adventure: Limites Extremos</h3>
+                    <p style="color: var(--gray-text); font-size: 1.1rem; margin-top: 10px;">
+                        Para os viciados em adrenalina, com roteiros que testam os limites e guias altamente especializados.
+                    </p>
+                    <div class="styled-list" style="margin-top: 2rem;">
+                        <h4>Incluso no Pacote Base:</h4>
+                        <ul>
+                            <li>Equipamento técnico de escalada/mergulho (Aluguel incluso)</li>
+                            <li>Guias certificados em Resgate e Primeiros Socorros.</li>
+                            <li>Seguro Viagem Cobre Esportes Radicais e Helirresgate.</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn" onclick="toggleDetails('detalhes4')" style="margin-top: 25px;">Ver 6 Benefícios Adicionais</button>
+                <div id="detalhes4" style="display:none; margin-top:15px; font-size:0.9rem; color: #ccc;">
+                    <p style="font-weight: bold; margin-bottom: 5px;">Bônus VoyageX Adventure:</p>
+                    <div class="styled-list">
+                        <ul>
+                            <li>Alimentação reforçada (Nutrição Esportiva) inclusa.</li>
+                            <li>Acomodação em Glampings ou Refúgios isolados.</li>
+                            <li>Aluguel de câmera de ação (GoPro) por 3 dias.</li>
+                            <li>Transfer em veículos 4x4 (Off-road).</li>
+                            <li>Mapeamento de rotas por satélite (GPS).</li>
+                            <li>Aulas preparatórias rápidas com o guia.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-image-right">
+                <img src="https://img.redbull.com/images/c_crop,x_1330,y_0,h_2133,w_1600/c_fill,w_450,h_600/q_auto,f_auto/redbullcom/2022/1/3/mgpfpgv8ec4djrzg6td4/escaladawillgadd" alt="Pessoa escalando uma montanha" loading="lazy">
+            </div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p id="footer-msg">VoyageX &copy; 2025</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

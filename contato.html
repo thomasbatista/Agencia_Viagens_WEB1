@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>VoyageX | Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">VoyageX</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="destinos.html">Destinos</a>
+            <a href="pacotes.html">Pacotes</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="contato.html" style="color: var(--accent-color);">Contato</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <center><h2 class="section-title">Fale Conosco</h2></center>
+        
+        <div style="max-width: 600px; margin: 0 auto; background: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid #333;">
+            
+            <form id="contactForm" onsubmit="return validarFormulario(event)">
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto">Assunto / Interesse:</label>
+                    <select id="assunto" name="assunto">
+                        <option value="pacotes">Informações sobre Pacotes</option>
+                        <option value="reserva">Fazer uma Reserva</option>
+                        <option value="suporte">Suporte ao Cliente</option>
+                        <option value="parceria">Parcerias</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos ajudar?"></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Enviar Mensagem</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p id="footer-msg">VoyageX &copy; 2025</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
