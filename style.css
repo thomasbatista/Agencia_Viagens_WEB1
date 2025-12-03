@@ -47,12 +47,61 @@ header {
 .nav-links { display: flex; gap: 2rem; }
 .nav-links a:hover { color: var(--accent-color); }
 
+/* Botão de navegação móvel (hamburger) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1101;
+}
+.nav-toggle .hamburger {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: var(--text-color);
+    border-radius: 3px;
+    position: relative;
+    transition: background 0.25s ease;
+}
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--text-color);
+    border-radius: 3px;
+    transition: transform 0.25s ease, top 0.25s ease, opacity 0.25s ease;
+}
+.nav-toggle .hamburger::before { top: -8px; }
+.nav-toggle .hamburger::after { top: 8px; }
+
+/* Estado aberto - X bem centrado */
+.nav-toggle[aria-expanded="true"] .hamburger { background: transparent; }
+.nav-toggle[aria-expanded="true"] .hamburger::before { transform: rotate(45deg); top: 0; }
+.nav-toggle[aria-expanded="true"] .hamburger::after { transform: rotate(-45deg); top: 0; }
+
 /* --- Layout Geral --- */
 .container {
     padding: 4rem 5%;
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* Hero responsivo */
+.hero { padding: 80px 20px; text-align: center; color: white; }
+
+/* Tipografia responsiva */
+h1 { font-size: clamp(1.6rem, 2.5vw + 1rem, 3.5rem); }
+h2 { font-size: clamp(1.4rem, 2vw + 0.8rem, 2.5rem); }
+h3 { font-size: clamp(1.1rem, 1.6vw + 0.6rem, 1.6rem); }
+
 
 .section-title {
     text-align: center;
@@ -121,7 +170,8 @@ header {
 .card-image-right img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    max-height: 600px;
+    object-fit: cover;
 }
 
 /* Responsividade para Cartões Horizontais */
@@ -136,29 +186,68 @@ header {
     }
 }
 
+@media (max-width: 600px) {
+    .package-card-horizontal { box-shadow: none; border: 1px solid #222; }
+    .card-image-right img { max-height: none; height: auto; }
+}
+
+/* Navegação responsiva: esconder links e mostrar botão (overlay fixo) */
+@media (max-width: 900px) {
+    header { padding: 0.9rem 4%; }
+    .logo { font-size: 1.4rem; }
+    .nav-links { display: none; position: fixed; left: 0; right: 0; top: 56px; bottom: 0; background: var(--card-bg); flex-direction: column; gap: 0; padding: 1.2rem 5%; z-index: 1100; overflow-y: auto; }
+    .nav-links a { padding: 1rem 0; border-top: 1px solid rgba(255,255,255,0.03); font-size: 1.05rem; }
+    .nav-toggle { display: flex; }
+}
+
+/* Quando nav é aberta via classe */
+.nav-open { display: flex !important; }
+
+/* Tabelas responsivas */
+@media (max-width: 700px) {
+    table { display: block; width: 100%; overflow: auto; }
+    th, td { white-space: nowrap; }
+}
+
+/* Formulário responsivo */
+@media (max-width: 500px) {
+    .container { padding: 2rem 4%; }
+    .card-content-left { padding: 1.2rem; }
+    .btn { width: 100%; }
+}
+
+/* Footer ajuste em small */
+@media (max-width: 450px) {
+    footer { padding: 1.5rem; }
+}
+
+/* Bloqueio de scroll quando o menu mobile está aberto */
+.no-scroll { overflow: hidden; height: 100vh; }
+
 /* --- Carrossel (Destinos) --- */
 .carousel-container {
     position: relative;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 10px;
     background: var(--card-bg);
     border: 1px solid #333;
+    padding: 0;
 }
-.carousel-slide { display: none; padding: 2rem; animation: fadeEffect 1s; }
+.carousel-slide { display: none; padding: 1rem; animation: fadeEffect 0.6s; }
 .carousel-slide.active { display: block; }
 .slide-img {
-    width: 100%; height: 300px; object-fit: cover;
+    width: 100%; height: auto; max-height: 50vh; object-fit: cover;
     border-radius: 5px; margin-bottom: 1rem; background-color: #333;
 }
 .prev, .next {
-    cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px;
-    color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease;
-    background-color: rgba(0,0,0,0.5); user-select: none;
+    cursor: pointer; position: absolute; top: 50%; width: auto; padding: 10px; margin-top: -18px;
+    color: white; font-weight: bold; font-size: 18px; transition: 0.3s ease;
+    background-color: rgba(0,0,0,0.45); user-select: none; border-radius: 4px;
 }
-.next { right: 0; border-radius: 3px 0 0 3px; }
-.prev { left: 0; border-radius: 0 3px 3px 0; }
+.next { right: 8px; }
+.prev { left: 8px; }
 @keyframes fadeEffect { from {opacity: .4} to {opacity: 1} }
 
 /* --- Tabelas (Destinos) --- */
